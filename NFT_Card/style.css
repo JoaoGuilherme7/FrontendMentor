@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color:#ccc;
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    background-color: rgba(5, 10, 41, 0.945);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.card{
+    position: relative;
+    width: 300px;
+    background-color: rgb(26, 33, 70);
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px 20px rgba(8, 1, 32, 0.644);
+}
+
+.eye{
+    position: absolute;
+    display: none;
+}
+
+.fa-eye{
+    font-size: 35px;
+    height: 260px;
+    width: 260px;
+    background-color:rgba(65, 205, 247, 0.438);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.main-image img{
+    width:260px;
+    top:84px;
+    border-radius: 8px;
+    background-color: rgb(65, 204, 247);
+}
+
+.main-image:hover + .eye{
+    display: block;
+}
+
+.card h1 a{
+    font-size: 20px;
+    margin: 15px 0;
+    color: antiquewhite;
+}
+
+.card h1:hover a{
+    color: rgb(65, 204, 247);
+}
+
+.card h2 {
+    font-size: 16px;
+    font-weight: normal ;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.price-countdown{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+    margin: 15px 0;
+}
+
+#price{
+    font-weight: bold;
+    color: rgb(65, 204, 247);
+}
+
+#price i {
+    color: rgb(65, 204, 247);
+    margin-right: 4px;
+}
+
+#countdown{
+    font-size: 13px;
+    color: #ccc;
+}
+
+#countdown i{
+    margin-right: 4px;
+    font-size: 11px ;
+}
+
+.attribution{
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(204, 204, 204, 0.185);
+    font-size: 15px;
+    color:#ccc;
+    /* background-color: violet ; */
+}
+
+.attribution img{
+    height:30px;
+    margin-right: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    
+}
+
+.attribution a{
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+
+}
+
+.attribution a:hover{
+    color: rgb(65, 204, 247)
+}

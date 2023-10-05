@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #eee;
+    background-image: url(assets/images/pattern-background-desktop.svg);
+    background-size:  100%;
+    background-repeat: no-repeat;
+    
+
+    font-family: 'Outfit', sans-serif;}
+
+/* _____________________________________________ */
+
+.card{
+    height: 500px;
+    width: 315px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 20px 12px 0px #bbb;
+
+    overflow: hidden;
+}
+
+#image{
+    display: block;
+    height: 31%;
+    width: 100%;
+
+
+    /* background-color: blue; */
+    background-image: url(assets/images/illustration-hero.svg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* _____________________________________________ */
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 69%;
+    padding: 30px 15px;
+}
+
+.content h1{
+    font-size: 21px;
+    color: rgb(3, 3, 82);
+    font-weight: 900;
+}
+
+.content h2{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 200;
+    color: #777;
+    width: 80%;
+}
+
+/* _____________________________________________ */
+
+.plan{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    padding: 17px;
+    border-radius: 12px;
+    font-size: 15px;
+
+}
+
+.plan i{
+    display: block;
+    padding: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    color: #777;
+}
+
+/* -----span----- */
+.plan-type{
+    margin-right: 35px;
+
+}
+
+
+.plan-type h4{
+    color: #888;
+    font-weight: 100;
+}
+/* -------------- */
+
+.plan a{
+    font-size: 13px;
+    font-weight: 510;
+    color: blue ;
+}
+
+.plan a:hover{
+    color: hsl(224, 34%, 45%) ;
+    text-decoration: none;
+}
+
+/* _____________________________________________ */
+
+#proceed{
+    width: 100%;
+    height: 40px;
+    background-color: hsl(245, 75%, 52%);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 12px 12px 0px #ddd;
+}
+
+#proceed:hover{
+    background-color: hsl(224, 34%, 45%) ;
+}
+
+#cancel{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: 13px;
+    color: #777;
+    font-weight: 700;
+}
+
+#cancel:hover{
+    color: hsl(223, 47%, 23%);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 340px) {
+    body{
+        padding: 3vw;
+        background-image: url(assets/images/pattern-background-mobile.svg);
+    }
+
+    .card{
+        max-width: 315px;
+        width: 100%;
+        height: 160vw;
+        border-radius: 5.882vw;
+        box-shadow: 0px 8.824vw 4.5vw 0px #bbb;
+
+    }
+
+    .content{
+        padding: 8.824vw 4.412vw;
+    }
+
+    .content h1{
+        font-size: 6.3vw;
+    }
+
+    .content h2{
+        font-size: 4.4vw;
+    }
+
+    .plan{
+        padding: 4.9vw;
+        font-size: 4.4vw;
+    }
+    .plan i{
+        padding: 3.0vw;
+    }
+    .plan-type{
+        margin-right: 10vw;
+    
+    }
+
+    .plan a{
+        font-size: 3.7vw;
+    }
+
+    #proceed{
+        height: 15vw;
+        font-size: 4.5vw;
+    }
+
+    #cancel{
+        font-size: 3.523vw;
+    }
+}
