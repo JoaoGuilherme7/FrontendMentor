@@ -1,0 +1,138 @@
+/* MOBILE FIRST */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;600&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+ }
+
+
+.res-div{
+    padding: 20px;
+    background-color: #3636f8;
+    text-align: center;
+    border-radius: 0 0 25px 25px;
+    /* border: 2px solid red; */
+    
+}
+
+#res-ur{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ccc;
+}
+
+#res{
+    display: inline-block;
+    padding: 40px ;
+    background: linear-gradient(#2828b4,#3636f8) ;
+    border-radius: 50%;
+    margin: 30px 0;
+}
+
+#res p{
+    
+    color: white;
+    /* border:2px solid black; */
+    width: 72px ;
+    height: 72px;
+    
+}
+
+#res p strong{
+    display: inline-block;
+    font-size: 3.4rem;
+    margin-bottom: 5px;
+    
+}
+
+#res-txt{
+    display: block;
+    margin: 0 auto;
+    color: white;
+    font-size: 1em;
+    line-height: .6;
+    font-weight:lighter;
+    line-height: 1;
+    width: 250px;
+    
+}
+
+#res-txt strong{
+    display: inline-block;
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.summary{
+    padding: 20px;
+    /* border: 2px solid black; */
+}
+
+.summary h2{
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+
+.sum-style{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    
+}
+
+.sum-style .rate{
+    font-weight: bold;
+    color: #444;
+}
+
+.sum-style .rate em{
+    color: #888;
+}
+
+.reaction{
+    background-color: #f5e0e0b7;
+    color: #f88686;
+}
+
+.memory{
+    background-color: #f7eec6b0;
+    color: #ffd000;
+}
+
+.verbal{
+    background-color:  #a1fcde9d;
+    color:  #03ce8a;
+}
+
+.visual{
+    background-color: #b3b3fc93;
+    color: #3636f8;;
+}
+
+.fa{
+    margin-right: 5px;
+}
+
+button{
+    border-radius: 25px;
+    width: 100%;
+    background-color: #1b1730;
+    color: white;
+    padding: 14px;
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
