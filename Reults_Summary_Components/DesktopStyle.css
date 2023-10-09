@@ -1,0 +1,101 @@
+@media screen and (min-width:770px) {
+
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0px 2px 15px #ccc;
+        border-radius: 25px;
+
+    }
+
+    .res-div {
+        /* height:max-content; */
+        padding: 30px 20px;
+        border-radius: 25px;
+    }
+
+    #res {
+        padding: 30px;
+        margin: 30px 0;
+    }
+
+
+    #res-ur {
+        font-size: 1.1em;
+    }
+
+    #res p {
+        height: 72px;
+        width: 72px;
+        font-size: 1rem;
+    }
+
+    #res p strong {
+        display: inline-block;
+        font-size: 3.4em;
+        margin-bottom: 5px;
+
+    }
+
+    #res-txt {
+        font-size: 1rem;
+        line-height: 1;
+        width: 200px;
+    }
+
+    #res-txt strong {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .summary {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 0 25px 25px 0;
+        padding: 20px;
+
+        max-height:none;
+        min-height: fit-content;
+    }
+
+    .summary h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .summary ul{
+        height: fit-content;
+        gap: 10px;
+    }
+
+    .sum-style {
+        width: 250px;
+        padding: 16px;
+        border-radius: 8px;
+        font-size: .9rem;
+
+    }
+
+    .summary button {
+        border-radius: 25px;
+        padding: 15px;
+        font-size: 1rem;
+        margin-top: 35px;
+    }
+
+    .fa{
+        margin-right:5px;
+    }
+
+}
