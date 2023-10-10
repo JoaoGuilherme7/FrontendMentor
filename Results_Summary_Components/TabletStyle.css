@@ -1,10 +1,11 @@
 @media screen and (min-width:480px) {
 
     body {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 50px;
     }
 
     .container {
@@ -67,6 +68,7 @@
 
         max-height:none;
         min-height: fit-content;
+        gap: 0px;
     }
 
     .summary h2 {
