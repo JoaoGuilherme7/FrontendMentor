@@ -19,6 +19,14 @@
 
 a{
     text-decoration: none;
+    color: inherit;
+}
+
+nav a{
+    text-decoration:underline;
+}
+nav a:hover{
+    color: aqua;
 }
 
 body{
@@ -46,15 +54,18 @@ nav h2{
 
 section{
     width: 85%;
-    margin: 20px auto;
+    margin: 20px auto 70px;
+}
+
+h2.dificultyChallenges{
+    margin-bottom: 20px;
+}
+
+.projects-ul{
+    list-style: none;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap:1.89vw;
-}
-
-section a{
-    order: -1;
-
 }
 
 .project{
@@ -63,6 +74,7 @@ section a{
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 1.2vw;
+    
 
     display: flex;
     justify-content: space-between;
@@ -87,35 +99,49 @@ section a{
  
 }
 
-.project h2{
+.project h3{
     color: #fff;
 
 }
 
-.project ul{
+.project .icons{
+    width: fit-content;
     display: flex;
+    align-items: center;
     list-style: none;
     color: white;
+    gap: 5px;
 }
 
-.project ul li{
-    margin-left: .7vw;
+/* ::::JUNIOR::::::::::::::::::::::::::: */
+#clipboard{
+    background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(Junior/clipboard-landing-page-master/design/desktop-design.jpg);
+    animation-duration: 5s;
 }
+
+/* ::::NEWBIE::::::::::::::::::::::::::: */
 
 #results{
-    background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(Results_Summary_Components/DESKTOP_DESIGN.jpg);
+    background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(Newbie/Results_Summary_Components/DESKTOP_DESIGN.jpg);
 }
 
 #nft_card{
-    background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(NFT_Card/images/desktop-design.jpg);
+    background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(Newbie/NFT_Card/images/desktop-design.jpg);
+    animation-duration: 1.3s;
 }
 
 #order_summary{
-    background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(Order_summary/assets/desktop-design.jpg);
+    background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(Newbie/Order_summary/assets/desktop-design.jpg);
 }
+
+/* ::::NEWBIE::::::::::::::::::::::::::: */
 
 
 @media screen and (max-width: 769px) {
+
+    section{
+        margin: 4vw auto 12vw;
+    }
 
     nav{
         display: block;
@@ -131,19 +157,22 @@ section a{
         font-size: 1.8vw;
     }
 
-    section{
+    h2.dificultyChallenges{
+        font-size: 3vw;
+        margin-bottom: 2.4vw;
+    }
+
+    .projects-ul{
         grid-template-columns: repeat(2,1fr);
     }
 
     .project{
         height: 24vw;
-
         animation-name: move-background;
         animation-duration: 2s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         animation-direction: alternate;
-
         font-size:1.6vw;
     }
 
@@ -153,18 +182,26 @@ section a{
 }
 
 @media screen and (max-width:480px) {
-    section{
-        grid-template-columns: repeat(1,1fr);
-        gap:3.5vw;
-
-    }
-
     nav h1{
         font-size: 5vw;
     }
 
     nav h2{
         font-size:3.7vw;
+    }
+
+    h2.dificultyChallenges{
+        font-size: 6vw;
+    }
+
+    section{
+        text-align: center;
+    }
+
+    .projects-ul{
+        grid-template-columns: repeat(1,1fr);
+        gap:3.5vw;
+
     }
 
     .project{
