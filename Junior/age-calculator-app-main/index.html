@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>CalculAge</title>
+</head>
+<body>
+  <div class="container">
+    <form action="">
+
+      <label for="day">Day
+        <input id="day" type="text" maxlength="2" placeholder="DD" required>
+        <p id="dayError"></p>
+      </label>
+
+      <label for="month">Month
+        <input id="month" type="text" maxlength="2" placeholder="MM" required>
+        <p id="monthError"></p>
+      </label>
+
+      <label for="year">Year
+        <input id="year" type="text" maxlength="4" placeholder="YYYY" required>
+        <p id="yearError"></p>
+      </label>
+
+      <button id="submitButton"><img src="assets/images/icon-arrow.svg" alt=""></button>
+
+    </form>
+
+    <div class="result">
+      <p><em>--</em> years</p>
+      <p><em>--</em> months</p>
+      <p><em>--</em> days</p>
+    </div>
+  </div>
+
+  <script src="calculAge.js"></script>
+
+</body>
+</html>
