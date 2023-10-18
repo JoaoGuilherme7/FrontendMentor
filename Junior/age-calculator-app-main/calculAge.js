@@ -1,3 +1,4 @@
+const inputs = document.querySelectorAll('input[type="number"]');
 const dayField = document.querySelector('#day');
 const monthField = document.querySelector('#month');
 const yearField = document.querySelector('#year');
@@ -12,8 +13,6 @@ const todayDate = new Date();
 const todayDay = todayDate.getDate();
 const todayMonth = todayDate.getMonth() + 1;
 const todayYear = todayDate.getFullYear();
-
-
 
 let daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -40,107 +39,85 @@ function formError(isOk) {
     }
 }
 
-// async function validateForm() {
-
-//     const day = Number(dayField.value);
-//     const month = Number(monthField.value);
-//     const year = Number(yearField.value);
-
-//     if (day > daysPerMonth[month - 1]) {
-//         if (month == 2 && isLeapYear(year)) {
-//             dayField.value = 29;
-//         }
-//         else {
-//             dayField.value = daysPerMonth[month - 1];
-//         }
-//     }
-//     else if (day < 1) {
-//         dayField.value = 1;
-//     }
-//     // :::::::::::::::::::::::::
-//     if (month > 12) {
-//         monthField.value = 12;
-//     }
-//     else if (month < 1) {
-//         monthField.value = 1;
-//     }
-//     // :::::::::::::::::::::::::
-//     if (year >= todayYear) {
-//         yearField.value = todayYear;
-//         if (month >= todayMonth) {
-//             monthField.value = todayMonth;
-//             if (day >= todayDay) {
-//                 dayField.value = todayDay;
-//             }
-//         }
-//     }
-//     else if (year < 0) {
-//         yearField.value = 0;
-//     }
-// }
 
 async function validateForm(day, month, year) {
     let isOk = true;
 
-    if ((day > daysPerMonth[month - 1] || day < 1 || day>31)
-    && !(month == 2 && isLeapYear(year) && day == 29)) {
-        dayError.textContent = 'Must be a valid day';
-        dayError.style.visibility = 'visible';
+    if (year > todayYear || year < 0) {
+        yearError.textContent = 'Must be in the past';
+        yearError.style.visibility = 'visible';
         isOk = false;
+        yearField.focus();
     }
-    else{
-        dayError.style.visibility ='hidden';
+    else if (year == todayYear) {
+        if (month > todayMonth) {
+            monthError.textContent = 'Must be a valid month';
+            monthError.style.visibility = 'visible';
+            isOk = false;
+            monthField.focus();
+
+        }
+        else if (month == todayMonth && day >= todayDay) {
+            dayError.textContent = 'Must be a valid day';
+            dayError.style.visibility = 'visible';
+            isOk = false;
+            dayField.focus();
+        }
     }
+    else {
+        yearError.style.visibility = 'hidden';
+    }
+
 
 
     if (month > 12 || month < 1) {
         monthError.textContent = 'Must be a valid month';
         monthError.style.visibility = 'visible';
         isOk = false;
+        monthField.focus();
     }
-    else{
+    else {
         monthError.style.visibility = 'hidden';
     }
 
-
-    if (year > todayYear || year < 0) {
-        yearError.textContent = 'Must be in the past';
-        yearError.style.visibility = 'visible';
-        isOk = false;
-    }
-    else if (year == todayYear) {  
-        if (month > todayMonth) {
-            monthError.textContent = 'Must be a valid month';
-            monthError.style.visibility = 'visible';
-            isOk = false;
-        }
-        else if (month == todayMonth && day >= todayDay) {
-            dayError.textContent = 'Must be a valid day';
-            dayError.style.visibility = 'visible';
-            isOk = false;
-        }
-    }
-    else{
-        yearError.style.visibility='hidden';
-    }
-
-
-
-    if(day ==''){
-        dayError.textContent = 'This field is required';
+    if ((day > daysPerMonth[month - 1] || day < 1 || day > 31)
+        && !(month == 2 && isLeapYear(year) && day == 29)) {
+        dayError.textContent = 'Must be a valid day';
         dayError.style.visibility = 'visible';
-        isOk=false;
+        isOk = false;
+        dayField.focus();
     }
-    if(month==''){
-        monthError.textContent = 'This field is required';
-        monthError.style.visibility = 'visible';
-        isOk=false;
+    else {
+        dayError.style.visibility = 'hidden';
     }
-    if(year==''){
+
+    // :::::::::::::::::::::::::::
+
+    
+    if (year == '' && year != 0) {
         yearError.textContent = 'This field is required';
         yearError.style.visibility = 'visible';
-        isOk=false;
+        isOk = false;
+        yearField.focus();
+
     }
+    
+    if (month == '') {
+        monthError.textContent = 'This field is required';
+        monthError.style.visibility = 'visible';
+        isOk = false;
+        monthField.focus();
+
+    }
+
+    if (day == '') {
+        dayError.textContent = 'This field is required';
+        dayError.style.visibility = 'visible';
+        isOk = false;
+        dayField.focus();
+
+    }
+    
 
     console.log(isOk);
     if (!isOk) {
@@ -205,18 +182,38 @@ function printDifference(daysDif, monthsDif, yearsDif) {
     else {
         years = '';
     }
+    // ::::::::::::::::::::::::::::::::::::::::::::::
+    if (yearsDif == 0 && monthsDif == 0 && daysDif == 0) {
+        days = `<p><em>It's</em> Todayy!!</p>`
+    }
+
 
     resultField.innerHTML = `${years + months + days}`;
 }
 
-function printNoDate(){
-    resultField.innerHTML= 
-    `<p><em>--</em> years</p>
-    <p><em>--</em> months</p>
-    <p><em>--</em> days</p>`;
+function printNoDate() {
+    resultField.innerHTML =
+        `<p><em>--</em> years</p>
+        <p><em>--</em> months</p>
+        <p><em>--</em> days</p>`;
 }
 
 function main() {
+
+    inputs.forEach(input => {
+        input.addEventListener("input", function () {
+
+            if (this.value.length > this.maxLength ) {
+                this.value = this.value.substring(1);
+                // this.value = this.value.slice(0, this.maxLength);
+            }
+            else if (this.value.length < this.maxLength) {
+                this.value = `${('0'.repeat(this.maxLength - this.value.length) + this.value)}`;
+            }
+
+        });
+    });
+
     submitButton.addEventListener('click', async (event) => {
         event.preventDefault();
 
@@ -224,11 +221,14 @@ function main() {
         const month = Number(monthField.value);
         const year = Number(yearField.value);
 
+
+
         let formIsOk = await validateForm(day, month, year);
+
         if (formIsOk) {
             datesDifference(day, month, year);
         }
-        else{
+        else {
             printNoDate();
         }
     });
