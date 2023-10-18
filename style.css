@@ -178,7 +178,7 @@ h2.dificultyChallenges{
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         animation-direction: alternate;
-        font-size:1.6vw;
+        font-size:2vw;
     }
 
     .project:hover{
@@ -211,7 +211,7 @@ h2.dificultyChallenges{
 
     .project{
         height: 48vw;
-        font-size:3vw;
+        font-size:4vw;
         border-radius: 2.5vw;
     }
 }
