@@ -120,7 +120,7 @@ form button img {
     .container{
         margin: 20px 0;
         width: 90%;
-        padding: 5rem  3.0rem;
+        padding: 5rem  2.0rem;
 
     }
     
@@ -132,7 +132,7 @@ form button img {
     }
 
     label{
-        flex-basis: 8.7rem;
+        flex-basis: 9.7rem;
         font-size: 1.1rem;
     }
 
@@ -146,17 +146,17 @@ form button img {
     }
 
     .result{
-        margin-top: 7rem;
+        margin-top: 6rem;
     }
     .result p {
         font-size: 5.6rem;
     }
 
-    /* label input:hover{
+    label input:hover{
         border: 1px solid hsl(259, 100%, 65%);
-    } */
+    }
 
-    /* form button:hover{
-        background-color: #222;
-    } */
+    form button:hover{
+        background-color: hsl(259, 100%, 65%);
+    }
 }

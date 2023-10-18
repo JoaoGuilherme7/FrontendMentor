@@ -82,7 +82,7 @@ function formError(isOk) {
 async function validateForm(day, month, year) {
     let isOk = true;
 
-    if ((day > daysPerMonth[month - 1] || day < 1)
+    if ((day > daysPerMonth[month - 1] || day < 1 || day>31)
     && !(month == 2 && isLeapYear(year) && day == 29)) {
         dayError.textContent = 'Must be a valid day';
         dayError.style.visibility = 'visible';
@@ -124,21 +124,23 @@ async function validateForm(day, month, year) {
         yearError.style.visibility='hidden';
     }
 
-    if(day ==''){
-        dayError.textContent = 'This fiels is required';
-        dayError.style.visibility = 'visible';
 
+
+    if(day ==''){
+        dayError.textContent = 'This field is required';
+        dayError.style.visibility = 'visible';
+        isOk=false;
     }
     if(month==''){
-        monthError.textContent = 'This fiels is required';
+        monthError.textContent = 'This field is required';
         monthError.style.visibility = 'visible';
-
+        isOk=false;
     }
     if(year==''){
-        yearError.textContent = 'This fiels is required';
+        yearError.textContent = 'This field is required';
         yearError.style.visibility = 'visible';
+        isOk=false;
     }
-
 
     console.log(isOk);
     if (!isOk) {
@@ -207,6 +209,13 @@ function printDifference(daysDif, monthsDif, yearsDif) {
     resultField.innerHTML = `${years + months + days}`;
 }
 
+function printNoDate(){
+    resultField.innerHTML= 
+    `<p><em>--</em> years</p>
+    <p><em>--</em> months</p>
+    <p><em>--</em> days</p>`;
+}
+
 function main() {
     submitButton.addEventListener('click', async (event) => {
         event.preventDefault();
@@ -218,6 +227,9 @@ function main() {
         let formIsOk = await validateForm(day, month, year);
         if (formIsOk) {
             datesDifference(day, month, year);
+        }
+        else{
+            printNoDate();
         }
     });
 }
