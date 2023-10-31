@@ -122,6 +122,12 @@ h2.dificultyChallenges{
 #calculAge{
     background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(Junior/age-calculator-app-main/design/desktop-completed.jpg);
     animation-duration: 1.5s;
+}
+
+#newsletter{
+    background-image: linear-gradient(0deg, #000000d0, #ffffff00, #ffffff00), url(Junior/newsletter-sign-up-with-success-message-main/design/desktop-design.jpg);
+    animation-duration: 1.5s;
+
 
 }
 /* ::::NEWBIE::::::::::::::::::::::::::: */
