@@ -133,7 +133,7 @@ body {
 .success-content {
   background-color: #fff;
   color: hsl(234, 29%, 20%);
-  width: 25vw;
+  width: 34rem;
   padding: 3rem 3rem 4rem;
   border-radius: 2rem;
 }
@@ -173,9 +173,9 @@ body {
   background-color: rgb(240, 196, 196);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   html {
-    font-size: 1.3vw;
+    font-size: 0.9vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -216,12 +216,16 @@ body {
     background-image: url(../assets/images/illustration-sign-up-mobile.svg);
     border-radius: 0 0 1.5rem 1.5rem;
   }
+  .success-container {
+    height: 100vh;
+    padding-top: 12rem;
+  }
   .success-content {
     background-color: #fff;
     color: hsl(234, 29%, 20%);
     width: 100vw;
-    height: 100vh;
-    padding: 12rem 1.5rem 3rem;
+    height: 100%;
+    padding: 0 1.5rem 3rem;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
